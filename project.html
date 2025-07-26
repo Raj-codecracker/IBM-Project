@@ -1,482 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NayaSa- Circular Economy Marketplace Platform</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NayaSa - The Circular Fashion Marketplace</title>
+
+    <!-- Tailwind CSS + Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .gradient-bg {
-            background: linear-gradient(135deg, #4338CA 0%, #5E35B1 100%);
+            background: linear-gradient(135deg, #4f46e5, #3b82f6);
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+
+        .loader {
+            border-top-color: #4f46e5;
+            animation: spin 1s linear infinite;
         }
-        .testimonial-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(245,245,245,0.9) 100%);
-            backdrop-filter: blur(10px);
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
-</head>
-<body class="font-sans antialiased text-gray-800">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img src="https://placehold.co/160x40?text=NayaSa+Logo" alt="NayaSa company logo with dark purple gradient branding" class="h-8">
-                    </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#" class="border-indigo-600 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
-                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Features</a>
-                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Pricing</a>
-                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Resources</a>
-                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
-                    </div>
-                </div>
-                <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
-                    <a href="#" class="bg-white text-indigo-600 hover:bg-gray-50 px-4 py-2 rounded-md text-sm font-medium">Log In</a>
-                    <a href="#" class="gradient-bg text-white hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium">Sign Up Free</a>
-                </div>
-                <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
 
-    <!-- Hero Section -->
-    <div class="gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Your Choice Today, A Greener Tomorrow</h1>
-                    <p class="text-lg md:text-xl mb-8 opacity-90">NayaSa "Because Nothing Truly Good Should Go to Waste" ,</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#" class="bg-white text-indigo-600 hover:bg-gray-100 text-center px-6 py-3 rounded-md text-lg font-semibold">Start Free Trial</a>
-                        <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-600 text-center px-6 py-3 rounded-md text-lg font-semibold">Watch Demo</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 md:pl-10">
-                    <img src="https://placehold.co/600x500?text=NayaSa+Dashboard" alt="NayaSa marketing dashboard interface showing analytics and campaign metrics" class="rounded-lg shadow-xl">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Clients Logo Cloud -->
-    <div class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-gray-500 text-sm mb-8">TRUSTED BY People</p>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 place-items-center">
-                <img src="https://placehold.co/120x50?text=Client+1" alt="Client company logo 1" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://placehold.co/120x50?text=Client+2" alt="Client company logo 2" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://placehold.co/120x50?text=Client+3" alt="Client company logo 3" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://placehold.co/120x50?text=Client+4" alt="Client company logo 4" class="h-8 opacity-60 hover:opacity-100 transition">
-                <img src="https://placehold.co/120x50?text=Client+5" alt="Client company logo 5" class="h-8 opacity-60 hover:opacity-100 transition">
-            </div>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Everything You Need in One Platform</h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">From second-hand sales to repair services,NayaSa offers all the tools to buy, sell, donate, and upcycle — empowering users to reduce waste and embrace sustainable living.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Feature 1 -->
-                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-bg text-white mb-4">
-                        <i class="fas fa-envelope-open-text text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">Email Automation</h3>
-                    <p class="mt-2 text-gray-500">Create and send personalized emails triggered by customer actions with our drag-and-drop builder.</p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-bg text-white mb-4">
-                        <i class="fas fa-comment-dots text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">SMS Marketing</h3>
-                    <p class="mt-2 text-gray-500">Engage your customers with timely SMS messages that drive opens, clicks, and conversions.</p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-bg text-white mb-4">
-                        <i class="fas fa-chart-line text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">Advanced Analytics</h3>
-                    <p class="mt-2 text-gray-500">Measure performance with detailed reports and get insights to optimize your campaigns.</p>
-                </div>
-                <!-- Feature 4 -->
-                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-bg text-white mb-4">
-                        <i class="fas fa-robot text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">AI Optimization</h3>
-                    <p class="mt-2 text-gray-500">Our AI suggests the best times to send emails and optimizes subject lines for maximum engagement.</p>
-                </div>
-                <!-- Feature 5 -->
-                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-bg text-white mb-4">
-                        <i class="fas fa-landmark text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">Landing Pages</h3>
-                    <p class="mt-2 text-gray-500">Build high-converting landing pages without coding using our template library.</p>
-                </div>
-                <!-- Feature 6 -->
-                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300">
-                    <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-bg text-white mb-4">
-                        <i class="fas fa-random text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">Omnichannel</h3>
-                    <p class="mt-2 text-gray-500">Create seamless customer journeys across email, SMS, web, and social media.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-    <div class="gradient-bg text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold mb-2">10,000+</div>
-                    <div class="text-lg opacity-80">Happy Customers</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">95%</div>
-                    <div class="text-lg opacity-80">Customer Retention</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">500M+</div>
-                    <div class="text-lg opacity-80">Emails Sent</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">4.9/5</div>
-                    <div class="text-lg opacity-80">Average Rating</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Customers Say</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card p-8 rounded-xl shadow-md relative">
-                    <div class="absolute -top-8 -left-8 text-indigo-100 text-6xl opacity-50 font-serif">“</div>
-                    <p class="text-gray-700 mb-6">NayaSa transformed our marketing. What used to take hours now happens automatically, and our conversion rates have doubled.</p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/50x50" alt="Portrait of satisfied customer Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <div class="font-medium">Sarah Johnson</div>
-                            <div class="text-indigo-600">Marketing Director, TechCorp</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card p-8 rounded-xl shadow-md relative">
-                    <div class="absolute -top-8 -left-8 text-indigo-100 text-6xl opacity-50 font-serif">“</div>
-                    <p class="text-gray-700 mb-6">The AI recommendations alone have paid for the platform ten times over. This is marketing automation done right.</p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/50x50" alt="Portrait of happy client Michael Chen" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <div class="font-medium">Michael Chen</div>
-                            <div class="text-indigo-600">CEO, StartupWidgets</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card p-8 rounded-xl shadow-md relative">
-                    <div class="absolute -top-8 -left-8 text-indigo-100 text-6xl opacity-50 font-serif">“</div>
-                    <p class="text-gray-700 mb-6">I was unsure about using a reuse platform at first, but trying NayaSa changed everything. It’s so easy to buy, sell, and donate — and knowing I’m helping reduce waste makes it even better.</p>
-                    <div class="flex items-center">
-                        <img src="https://placehold.co/50x50" alt="Portrait of business owner Priya Patel" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <div class="font-medium">Priya Patel</div>
-                            <div class="text-indigo-600">Founder, EcoGoods</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pricing Section -->
-    <div class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Simple, Transparent Pricing</h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Choose the plan that fits your business needs</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Basic Plan -->
-                <div class="border border-gray-200 rounded-lg p-6 hover:border-indigo-500 transition duration-300">
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Starter</h3>
-                    <p class="text-gray-500 mb-6">Perfect for small businesses getting started</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-gray-900">$29</span>
-                        <span class="text-gray-500">/month</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Up to 1,000 contacts</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Basic email automation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Email support</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-md transition duration-300">Get Started</button>
-                </div>
-                <!-- Pro Plan -->
-                <div class="border-2 border-indigo-500 rounded-lg p-6 bg-gray-50 relative">
-                    <div class="absolute top-0 right-0 -mt-4 mr-4 bg-indigo-500 text-white text-xs font-semibold px-3 py-1 rounded-full">POPULAR</div>
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Professional</h3>
-                    <p class="text-gray-500 mb-6">For growing businesses with advanced needs</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-gray-900">$99</span>
-                        <span class="text-gray-500">/month</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Up to 10,000 contacts</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Advanced automation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Priority phone support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">AI optimization</span>
-                        </li>
-                    </ul>
-                    <button class="w-full gradient-bg hover:opacity-90 text-white py-2 px-4 rounded-md transition duration-300">Get Started</button>
-                </div>
-                <!-- Enterprise Plan -->
-                <div class="border border-gray-200 rounded-lg p-6 hover:border-indigo-500 transition duration-300">
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Enterprise</h3>
-                    <p class="text-gray-500 mb-6">For large organizations with custom needs</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-gray-900">$299</span>
-                        <span class="text-gray-500">/month</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Unlimited contacts</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Full automation suite</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Dedicated account manager</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="h-5 w-5 text-green-500 mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-600">Custom integrations</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-md transition duration-300">Contact Sales</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="gradient-bg text-white py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-extrabold mb-6">Ready to Join the Circular Revolution?</h2>
-            <p class="text-xl opacity-90 mb-10">Join thousands of eco-conscious users reducing waste with NayaSa. Buy, sell, or donate today — it’s free, easy, and makes a difference.</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#" class="bg-white text-indigo-600 hover:bg-gray-100 text-center px-8 py-4 rounded-md text-lg font-semibold">Start Free Trial</a>
-                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-600 text-center px-8 py-4 rounded-md text-lg font-semibold">Schedule Demo</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-white font-semibold mb-4">Product</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white">Features</a></li>
-                        <li><a href="#" class="hover:text-white">Pricing</a></li>
-                        <li><a href="#" class="hover:text-white">Integrations</a></li>
-                        <li><a href="#" class="hover:text-white">Roadmap</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold mb-4">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white">Documentation</a></li>
-                        <li><a href="#" class="hover:text-white">Tutorials</a></li>
-                        <li><a href="#" class="hover:text-white">Blog</a></li>
-                        <li><a href="#" class="hover:text-white">Webinars</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
-                        <li><a href="#" class="hover:text-white">Contact</a></li>
-                        <li><a href="#" class="hover:text-white">Press</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold mb-4">Connect</h3>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <p class="text-gray-500 text-sm">Subscribe to our newsletter</p>
-                    <div class="mt-4 flex">
-                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-md w-full focus:outline-none">
-                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md">→</button>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <img src="https://placehold.co/160x40?text=NayaSa+Logo" alt="NayaSa company logo with white text on dark background" class="h-6">
-                </div>
-                <div class="text-sm text-gray-500">
-                    © 2025 NayaSa Inc. All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile Menu (hidden by default) -->
-    <div class="hidden fixed inset-0 bg-black bg-opacity-50 z-50" id="mobileMenu">
-        <div class="fixed inset-y-0 right-0 w-5/6 max-w-sm bg-white shadow-lg">
-            <div class="flex items-center justify-between h-16 px-4 sm:px-6">
-                <div>
-                    <img src="https://placehold.co/120x30?text=NayaSa" alt="NayaSa mobile menu logo" class="h-8">
-                </div>
-                <button class="text-gray-500 hover:text-gray-700" onclick="toggleMobileMenu()">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="px-4 py-6">
-                <nav class="space-y-4">
-                    <a href="#" class="block text-gray-900 hover:text-indigo-600">Home</a>
-                    <a href="#" class="block text-gray-900 hover:text-indigo-600">Features</a>
-                    <a href="#" class="block text-gray-900 hover:text-indigo-600">Pricing</a>
-                    <a href="#" class="block text-gray-900 hover:text-indigo-600">Resources</a>
-                    <a href="#" class="block text-gray-900 hover:text-indigo-600">Contact</a>
-                    
-                    <div class="pt-8 border-t border-gray-200 mt-8">
-                        <a href="#" class="block text-gray-900 hover:text-indigo-600 mb-4">Log In</a>
-                        <a href="#" class="block gradient-bg text-white text-center hover:opacity-90 py-2 px-4 rounded-md">Sign Up Free</a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+            100% {
+                transform: translateX(-50%);
             }
         }
 
-        // Initialize mobile menu button
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('nav button');
-            menuButton.addEventListener('click', toggleMobileMenu);
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission example
-        const newsletterForm = document.querySelector('footer form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                if (emailInput.value) {
-                    alert('Thank you for subscribing to our newsletter!');
-                    emailInput.value = '';
-                }
-            });
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
         }
-    </script>
+    </style>
+    <style>
+        @keyframes slide-x {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-slide-x {
+            animation: slide-x 30s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition duration-300">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center">
+        <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
+    </div>
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 shadow-md fixed top-0 w-full z-50 transition duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://placehold.co/140x40?text=NayaSa" alt="NayaSa Logo" class="h-8">
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#"
+                        class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white transition">Home</a>
+                    <a href="#features"
+                        class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white transition">Features</a>
+                    <a href="#sponsors"
+                        class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white transition">Sponsors</a>
+                    <a href="#pricing"
+                        class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white transition">Pricing</a>
+                    <a href="#contact"
+                        class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-white transition">Contact</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="darkToggle"
+                    class="text-xl text-gray-500 dark:text-gray-300 hover:text-indigo-600 transition">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html"
+                    class="px-4 py-2 rounded-md border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">Log
+                    In</a>
+                <a href="register.html"
+                    class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Spacer for fixed navbar -->
+    <div class="h-20"></div>
+    <!-- Hero Section -->
+    <section id="hero" class="pt-24 pb-24 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
+            <!-- Left Text Content -->
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight animate-fade-in-down">
+                    Your Choice Today, A Greener Tomorrow
+                </h1>
+                <p class="text-lg mb-8 opacity-90 animate-fade-in-up">
+                    NayaSa - Because Nothing Truly Good Should Go to Waste
+                </p>
+                <div class="flex flex-wrap gap-4 animate-fade-in-up delay-150">
+                    <a href="#"
+                        class="bg-white text-indigo-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition duration-300">
+                        Start Free Trial
+                    </a>
+                    <a href="#"
+                        class="border border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-indigo-600 transition duration-300">
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Hero Image -->
+            <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                <img src="https://placehold.co/600x500?text=NayaSa+Dashboard" alt="NayaSa Dashboard Preview"
+                    class="w-full rounded-lg shadow-lg" />
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white dark:bg-gray-900 transition duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl animate-fade-in-down">
+                    Why Choose NayaSa?
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 animate-fade-in-up">
+                    A smarter way to reuse, reduce, and revive. Explore our marketplace built for sustainability.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                <!-- Feature Card 1 -->
+                <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center animate-fade-in">
+                    <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-recycle"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Eco-Friendly Shopping</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        Buy and sell second-hand goods with ease and reduce your environmental footprint.
+                    </p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div
+                    class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center animate-fade-in delay-100">
+                    <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Repair Services</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        Connect with local repair experts to extend the life of your possessions.
+                    </p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div
+                    class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center animate-fade-in delay-200">
+                    <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-gift"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Easy Donations</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        Share items you no longer need with people who can use them — hassle-free.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">Our Concisous Clients</h2>
+            </div>
+
+            <!-- ✨ Sponsor Logo Slider -->
+            <section class="bg-grey-800 py-8 overflow-hidden">
+                <div class="relative w-full">
+                    <div class="flex space-x-12 animate-scroll whitespace-nowrap">
+                        <!-- Group 1: Actual Logos -->
+                        <img src="https://placehold.co/140x40?text=Client+1"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 1">
+                        <img src="https://placehold.co/140x40?text=Client+2"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 2">
+                        <img src="https://placehold.co/140x40?text=Client+3"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 3">
+                        <img src="https://placehold.co/140x40?text=Client+4"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 4">
+                        <img src="https://placehold.co/140x40?text=Client+5"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 5">
+
+                        <!-- Group 2: Duplicate Logos for seamless loop -->
+                         <img src="https://placehold.co/140x40?text=Client+1"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 1">
+                        <img src="https://placehold.co/140x40?text=Client+2"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 2">
+                        <img src="https://placehold.co/140x40?text=Client+3"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 3">
+                        <img src="https://placehold.co/140x40?text=Client+4"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 4">
+                        <img src="https://placehold.co/140x40?text=Client+5"
+                            class="h-12 grayscale opacity-80 hover:opacity-100 transition" alt="Client 5">
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Featured Categories -->
+            <section class="py-16 px-4">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--primary);">Shop by Category
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/371f1215-687a-4c56-bd0f-d1f51297d6bf.png"
+                                alt="Upcycled clothing collection featuring dresses, tops, and pants made from repurposed fabrics"
+                                class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg">Clothing</h3>
+                                <p class="text-gray-600">Unique wearable art</p>
+                            </div>
+                        </div>
+                        <div class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc88d1cd-9080-40c8-9fe9-973cc0321132.png"
+                                alt="Handmade upcycled accessories including bags, jewelry, and hats created from recycled materials"
+                                class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg">Accessories</h3>
+                                <p class="text-gray-600">Statement pieces</p>
+                            </div>
+                        </div>
+                        <div class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/33a18964-d1a8-40b9-b92f-0b148b362798.png"
+                                alt="Eco-friendly home decor items crafted from upcycled wood, glass, and textiles with bohemian style"
+                                class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg">Home Decor</h3>
+                                <p class="text-gray-600">Sustainable living</p>
+                            </div>
+                        </div>
+                        <div class="category-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/abe38c88-6cd4-485d-a0e8-fe0b64bac517.png"
+                                alt="Custom upcycled fashion designs tailored to individual preferences with sustainable materials"
+                                class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg">Custom Orders</h3>
+                                <p class="text-gray-600">Personalized designs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section class="py-16 px-4">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--primary);">Featured Upcycled
+                        Pieces</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                        <!-- Product 1 -->
+                        <div
+                            class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                            <div class="relative">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5be64ab3-2ae8-4c66-abfd-c84957546428.png"
+                                    alt="Upcycled denim jacket with hand-embroidered floral patterns made from leftover fabric scraps"
+                                    class="w-full h-64 object-cover">
+                                <span
+                                    class="absolute top-4 left-4 bg-green-700 text-white text-xs px-2 py-1 rounded">Bestseller</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg mb-1">Patchwork Denim Jacket</h3>
+                                <p class="text-gray-600 text-sm mb-2">Made from 5 recycled denim pieces</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-amber-500">₹1,999</span>
+                                    <button class="text-gray-500 hover:text-green-700">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div
+                            class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                            <div class="relative">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8c79c86e-9d21-436d-ad11-6a2961adb481.png"
+                                    alt="Stylish tote bag created from upcycled sari fabrics in vibrant colors with leather accents"
+                                    class="w-full h-64 object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg mb-1">Sari Fabric Tote Bag</h3>
+                                <p class="text-gray-600 text-sm mb-2">Handwoven from vintage saris</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-amber-500">₹799</span>
+                                    <button class="text-gray-500 hover:text-green-700">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div
+                            class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                            <div class="relative">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f05c37c6-566e-49f8-9663-5cdbeced1ad3.png"
+                                    alt="Handcrafted jewelry set made from upcycled glass bottles featuring necklace, earrings and bracelet"
+                                    class="w-full h-64 object-cover">
+                                <span
+                                    class="absolute top-4 left-4 bg-green-700 text-white text-xs px-2 py-1 rounded">New</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg mb-1">Recycled Glass Jewelry Set</h3>
+                                <p class="text-gray-600 text-sm mb-2">From discarded wine bottles</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-amber-500">₹329</span>
+                                    <button class="text-gray-500 hover:text-green-700">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div
+                            class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                            <div class="relative">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12244da0-8534-46b9-bee3-c3201b7b1c97.png"
+                                    alt="Modern wall art sculpture created from reclaimed wood with geometric patterns and natural finish"
+                                    class="w-full h-64 object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold text-lg mb-1">Reclaimed Wood Wall Art</h3>
+                                <p class="text-gray-600 text-sm mb-2">Salvaged teak and rosewood</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-amber-500">₹1,500</span>
+                                    <button class="text-gray-500 hover:text-green-700">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <a href="#" class="btn-primary inline-block text-white text-2xl px-8 py-3 rounded-full font-medium">View
+                            All Products</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="bg-indigo-600 text-white py-20 transition duration-300">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div class="text-4xl font-bold mb-2">12K+</div>
+                            <p class="text-lg opacity-80">Users Onboarded</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">98%</div>
+                            <p class="text-lg opacity-80">Positive Feedback</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">850+</div>
+                            <p class="text-lg opacity-80">Repair Requests Fulfilled</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">4.9/5</div>
+                            <p class="text-lg opacity-80">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Sponsors Section -->
+            <section id="sponsors" class="py-20 bg-gray-100 dark:bg-gray-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-10">Our Sponsors</h2>
+
+                    <section class="bg-gray-800 py-8 overflow-hidden">
+                        <div class="relative w-full overflow-hidden">
+                            <div class="flex space-x-12 animate-slide-x whitespace-nowrap">
+                                <!-- Group 1: Logos -->
+                                <img src="https://placehold.co/160x60?text=Sponsor+1" alt="Sponsor 1"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+2" alt="Sponsor 2"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+3" alt="Sponsor 3"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+4" alt="Sponsor 4"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+5" alt="Sponsor 5"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+6" alt="Sponsor 6"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+
+                                <!-- Group 2: Duplicates for seamless scroll -->
+                                <img src="https://placehold.co/160x60?text=Sponsor+1" alt="Sponsor 1"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+2" alt="Sponsor 2"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                                <img src="https://placehold.co/160x60?text=Sponsor+3" alt="Sponsor 3"
+                                    class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <!-- How It Works -->
+            <section class="py-16 px-4 bg-gray-800">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--primary);">How NayaSa Works
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div
+                                class="bg-white p-6 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                                 <i class="fas fa-tshirt text-3xl text-green-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl mb-2">Find Unique Pieces</h3>
+                            <p class="text-white">Discover one-of-a-kind fashion items made from upcycled materials
+                                by independent creators.</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="bg-white p-6 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                                 <i class="fas fa-recycle text-3xl text-green-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl mb-2">Sell Your Creations</h3>
+                            <p class="text-white">Join our community of NayaSa and monetize your sustainable fashion
+                                creations.</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="bg-white p-6 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-md">
+                                  <i class="fas fa-leaf text-3xl text-green-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-xl mb-2">Make an Impact</h3>
+                            <p class="text-white">Every purchase helps reduce textile waste and supports sustainable
+                                fashion.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- FAQ Section -->
+            <section id="faq" class="py-20 bg-white dark:bg-gray-900">
+                <div class="max-w-4xl mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-10">Frequently Asked Questions
+                    </h2>
+
+                    <div class="space-y-6 text-left">
+                        <!-- FAQ Item -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                            <button
+                                class="w-full text-left flex justify-between items-center text-lg font-medium text-gray-800 dark:text-white focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                What is NayaSa and how does it work?
+                                <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer mt-2 hidden text-gray-600 dark:text-gray-400">
+                                NayaSa is a circular economy marketplace where you can buy, sell, or donate used goods,
+                                upcycled items, and access repair services.
+                            </div>
+                        </div>
+                        <!-- FAQ Item -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                            <button
+                                class="w-full text-left flex justify-between items-center text-lg font-medium text-gray-800 dark:text-white focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                Is NayaSa free to use?
+                                <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer mt-2 hidden text-gray-600 dark:text-gray-400">
+                                Yes! NayaSa is free to join and start exploring. You only pay for products you purchase
+                                from sellers.
+                            </div>
+                        </div>
+                        <!-- FAQ Item -->
+                        <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                            <button
+                                class="w-full text-left flex justify-between items-center text-lg font-medium text-gray-800 dark:text-white focus:outline-none"
+                                onclick="toggleFAQ(this)">
+                                Can businesses register to donate or upcycle products?
+                                <i class="fas fa-chevron-down text-indigo-600 transition-transform"></i>
+                            </button>
+                            <div class="faq-answer mt-2 hidden text-gray-600 dark:text-gray-400">
+                                Absolutely. We encourage businesses to join NayaSa and contribute toward a greener
+                                tomorrow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact CTA -->
+            <section id="contact" class="gradient-bg text-white py-20">
+                <div class="max-w-5xl mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Ready to Be Part of the Change?</h2>
+                    <p class="text-lg md:text-xl opacity-90 mb-10">
+                        Join our movement to make sustainability accessible, beautiful, and practical. Sign up and let’s
+                        build the circular economy together.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="register.html"
+                            class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-md font-semibold transition">Join
+                            NayaSa</a>
+                        <a href="#"
+                            class="border-2 border-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-md font-semibold transition">Learn
+                            More</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900 text-gray-300">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white font-semibold mb-4">Product</h3>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-white">Features</a></li>
+                                <li><a href="#" class="hover:text-white">Pricing</a></li>
+                                <li><a href="#" class="hover:text-white">Integrations</a></li>
+                                <li><a href="#" class="hover:text-white">Roadmap</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-4">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-white">Documentation</a></li>
+                                <li><a href="#" class="hover:text-white">Tutorials</a></li>
+                                <li><a href="#" class="hover:text-white">Blog</a></li>
+                                <li><a href="#" class="hover:text-white">Webinars</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-4">Company</h3>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="hover:text-white">About Us</a></li>
+                                <li><a href="#" class="hover:text-white">Careers</a></li>
+                                <li><a href="#" class="hover:text-white">Contact</a></li>
+                                <li><a href="#" class="hover:text-white">Press</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-4">Subscribe</h3>
+                            <p class="text-sm text-gray-400 mb-4">Get updates, insights, and stories from the NayaSa
+                                team.</p>
+                            <form onsubmit="return false;" class="flex">
+                                <input type="email" placeholder="Email address"
+                                    class="bg-gray-800 text-white px-4 py-2 rounded-l-md w-full focus:outline-none">
+                                <button
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md">→</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Footer Bottom -->
+                    <div
+                        class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                        <div class="mb-4 md:mb-0">
+                            <img src="https://placehold.co/160x40?text=NayaSa+Logo" alt="NayaSa company logo"
+                                class="h-6">
+                        </div>
+                        <div class="text-sm text-gray-500 text-center md:text-left">
+                            © 2025 NayaSa. All rights reserved. Designed with 💚 for sustainability.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Back to Top Button -->
+            <button id="backToTop"
+                class="fixed bottom-5 right-5 bg-indigo-600 text-white p-3 rounded-full shadow-md hover:bg-indigo-700 transition hidden">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+
+            <!-- Scripts -->
+            <script src="script.js"></script>
+            <script>
+                // Back to top visibility toggle
+                const backToTopBtn = document.getElementById('backToTop');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.remove('hidden');
+                    } else {
+                        backToTopBtn.classList.add('hidden');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+
+                // Preloader
+                window.addEventListener('load', () => {
+                    const loader = document.getElementById('preloader');
+                    loader.style.display = 'none';
+                });
+
+                // Dark mode toggle
+                const toggle = document.getElementById('darkToggle');
+                toggle.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                });
+            </script>
+
 </body>
+
 </html>
